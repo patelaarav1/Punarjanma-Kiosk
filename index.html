@@ -229,10 +229,6 @@ svg .flash{animation:flash 2s ease-out both;transform-box:fill-box;transform-ori
       <p>Choose a section to begin.</p>
     </div>
     <div class="tiles" id="tiles"></div>
-    <div class="homeFoot">
-      
-      <button class="btn line round" id="fsBtn" aria-label="Full screen"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
-    </div>
   </section>
 
   <!-- CYCLE -->
@@ -449,7 +445,6 @@ $('#attract').addEventListener('click',()=>{show('home')});
 $('#cPlay').onclick=cyclePlay;$('#cMoksha').onclick=cycleMoksha;
 $('#vPrev').onclick=()=>verseStep(-1);$('#vNext').onclick=()=>verseStep(1);
 let sx=null;$('#vCard').addEventListener('pointerdown',e=>{sx=e.clientX});$('#vCard').addEventListener('pointerup',e=>{if(sx==null)return;const dx=e.clientX-sx;sx=null;if(Math.abs(dx)>50)verseStep(dx<0?1:-1)});
-$('#fsBtn').onclick=()=>{try{document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen().catch(()=>{})}catch(e){}};
 document.addEventListener('pointerdown',resetIdle,true);
 document.addEventListener('contextmenu',e=>e.preventDefault());
 addEventListener('resize',fit);
